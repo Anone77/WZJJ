@@ -1,0 +1,35 @@
+body{
+    background: url(../images/chooseImgs/zzwfclbg.png);
+    background-size: cover;
+}
+.study{
+    width: 78%;
+    height: 14%;
+    position: absolute;
+    left: 12%;
+    top: 6%;
+}
+.enter{
+    width: 78%;
+    height: 14%;
+    position: absolute;
+    left: 12%;
+    top: 26%;
+}
+#tips{
+    width: 65%;
+    border: 1px solid white;
+    position: absolute;
+    left: 12%;
+    top: 46%;
+    padding-top: 10px;
+    padding-left: 18px;
+    padding-right: 28px;
+}
+p{
+    letter-spacing: 0.05em;
+    font-size: 1em;
+}
+p .marginTop{
+    margin-top: 1px;
+}
