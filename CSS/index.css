@@ -1,0 +1,67 @@
+body {
+    width: 100%;
+    background-size: cover;
+    background-position: top;
+    background-image: url(../images/guide/pic1.png);
+    background-repeat: no-repeat;
+}
+
+.initiate {
+    width: 10%;
+    height: 25%;
+    position: absolute;
+    left: 86%;
+    top: -5px;
+    animation: initialPic 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+@keyframes initialPic {
+    0%{transform: scale(1,1)}
+    50%{transform: scale(1.1,1.1)}
+}
+
+.textPic {
+    width: 78%;
+    position: relative;
+    left: 10px;
+    top: 15px;
+    animation: downs 0.5s;
+}
+@keyframes downs {
+    0%{top:-38px;opacity: 0.0}
+    100%{top:15px;opacity: 1.0}
+}
+.personPic {
+    width: 68%;
+    height: 48%;
+    position: absolute;
+    top: 26%;
+    left: 26%;
+}
+.textPic2{
+    width: 78%;
+    height: 15%;
+    position: absolute;
+    top: 72%;
+    left: 10%;
+    animation: jump 0.5s;
+}
+@keyframes jump {
+    0%{transform: scale(1,1)}
+    50%{transform: scale(1.1,1.1)}
+}
+.answerBtn{
+    width: 45%;
+    height: 6%;
+    position: absolute;
+    top: 88%;
+    left: 26%;
+    animation: answer 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.5,0.5,0.5,0.5);
+    }
+@keyframes answer {
+    0%{transform: scale(1,1)}
+    50%{transform: scale(1.2,1.2)}
+}
