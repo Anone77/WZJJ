@@ -1,6 +1,6 @@
 body{
     background: url(../images/chooseImgs/zzwfclbg.png);
-    background-size: cover;
+    background-repeat: repeat-x;
 }
 .study{
     width: 78%;
@@ -27,8 +27,8 @@ body{
     padding-right: 28px;
 }
 p{
-    letter-spacing: 0.05em;
-    font-size: 1em;
+    letter-spacing: 0.02em;
+    font-size: 0.8em;
 }
 p .marginTop{
     margin-top: 1px;
