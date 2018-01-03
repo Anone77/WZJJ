@@ -7,13 +7,18 @@
 <body>
 
 <form id="IDNumber">
-    <hr/>
+    <hr width="100%"/>
     <div>
         <label style="">驾驶证号码 :</label>
-        <input type="text" id="IDCard">
+        <input type="text" id="IDCard" maxlength="18" >
+    </div>
+    <div>
+        <label>校验码</label>
+        <input type="text" id="code">
     </div>
     <hr>
     <button >确定，下一步</button>
+    <button></button>
 </form>
 
 </body>
@@ -31,10 +36,14 @@
         border: none;
         outline: none;
         margin-left: 2%;
-        font-size: 2.5em;
+        font-size: 2em;
         margin-top: 2%;
         margin-bottom: 2%;
         max-lines: 1;
+    }
+    #code{
+        border: none;
+        outline: none;
     }
 
     label {
