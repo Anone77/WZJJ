@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <title>自助违法处理-手机版</title>
 </head>
 <body>
 
 <form id="IDNumber">
-    <hr width="100%"/>
-    <div>
-        <label style="">驾驶证号码 :</label>
-        <input type="text" id="IDCard" maxlength="18" >
-    </div>
-    <div>
-        <label>校验码</label>
-        <input type="text" id="code">
+    <hr/>
+    <div id="info">
+        <div>
+            <label style="">驾驶证号码 :</label>
+            <input type="text" id="IDCard" maxlength="18">
+        </div>
+        <div>
+            <label>校验码：</label>
+            <input type="text" id="code" maxlength="6">
+        </div>
     </div>
     <hr>
-    <button >确定，下一步</button>
-    <button></button>
+    <div>
+        <button class="btn btn-primary" id="next">确定，下一步</button>
+    </div>
+    <div id="warnning">
+        <p>短信校验码已发送至号码150*****547的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50</p>
+    </div>
 </form>
+<div class="tips">
+    <p><b>温馨提示：</b></p>
 
+        <p>  &nbsp;&nbsp;1、输入您的驾驶证/身份证号码点击“确定，下一步”后，将会有验证码短信发送到您驾驶证所登记的手机上。如未收到短信，可能被手机安全软件拦截，请查看手机对应拦截记录。
+</p>
+        <p> &nbsp;&nbsp; 2、您的手机号必须是车管所驾驶证登记系统登记的真实有效手机号码，才能收到验证码，手机号未登记或未更新的请到交警指定窗口办理登记、变更手续。
+
+</p>
+    <p><b>学习减分说明：</b><br>
+    </p>
+
+    <p>
+        &nbsp;&nbsp;依据《浙江实施〈中华人民共和国道路交通安全法〉办法》的有关规定，违法行为人在接受网上自助处理非现场交通违法行为的同时，可以选择参加道路交通安全教育学习考试。经考试合格的，在接受网上自助处理记分的非现场交通违法行为时，符合减分条件的，可以自行减分处理。
+
+    </p>
+        <p>&nbsp;&nbsp;1、学习考试。考试题为10道选择题。在30分钟内答对10道题目中9道及以上的，视为考试合格，并获得2张分值1分的减分券。驾驶员在记分周期内可以参加2次学习考试，共可获得4张分值1分的减分券，共4分。
+</p>
+        <p> &nbsp;&nbsp; 2、减分券使用说明。1张减分券分值1分，多张可以一起使用，用于抵消相同分值的违法行为的记分分值。减分券在驾驶证记分周期内使用完毕，逾过周期将失效。
+</p>
+        <p> &nbsp;&nbsp;
+    3、适用范围。学习减分只针对温州市核发的驾驶证，并且只对自己名下登记的浙C号牌小型自备客车非现场记分交通违法行为的减分。并只能在温州市公安局交通警察支队提供的互联网自助违法处理平台处理时减分使用。
+</p>
+
+    </p>
+</div>
 </body>
 <style type="text/css">
     body {
@@ -36,14 +68,22 @@
         border: none;
         outline: none;
         margin-left: 2%;
-        font-size: 2em;
+        font-size: 2.5em;
         margin-top: 2%;
         margin-bottom: 2%;
         max-lines: 1;
     }
-    #code{
+
+    #code {
         border: none;
         outline: none;
+        font-size: 2.5em;
+        margin-left: 2%;
+        max-lines: 1;
+    }
+
+    #info {
+        position: relative;
     }
 
     label {
@@ -51,6 +91,31 @@
         margin-left: 3%;
         margin-top: 2%;
         margin-bottom: 2%;
+    }
+
+    #next {
+        width: 95%;
+        height: 4.5%;
+        position: absolute;
+        text-align: center;
+        font-size: 2.8em;
+        margin-left: 2.5%;
+    }
+
+    #warnning {
+        position: absolute;
+        margin-top: 12%;
+        font-size: 2em;
+        color: gray;
+        padding: 2%;
+    }
+
+    .tips {
+        position: absolute;
+        margin-top: 32%;
+        font-size: 2em;
+        padding: 2%;
+        color: gray;
     }
 </style>
 </html>
