@@ -1,0 +1,76 @@
+body {
+    background-color: ghostwhite;
+}
+
+#IDNumber {
+    background-color: white;
+    margin-top: 4%;
+}
+
+#IDCard {
+    border: none;
+    outline: none;
+    margin-left: 2%;
+    font-size: 2.5em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    max-lines: 1;
+}
+
+#code {
+    border: none;
+    outline: none;
+    font-size: 2.5em;
+    margin-left: 2%;
+    max-lines: 1;
+}
+
+#info {
+    position: relative;
+}
+
+label {
+    font-size: 2.5em;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#next {
+    width: 95%;
+    height: 65px;
+    position: absolute;
+    text-align: center;
+    font-size: 2.8em;
+    margin-left: 2.5%;
+}
+
+#warnning {
+    position: absolute;
+    margin-top: 12%;
+    font-size: 1.9em;
+    color: gray;
+    padding: 2%;
+}
+
+.tips {
+    position: absolute;
+    margin-top: 32%;
+    font-size: 2em;
+    padding: 2%;
+    color: gray;
+}
+hr{
+    border: 1px solid gray;
+}
+#clear{
+    margin-left: 155px;
+    margin-bottom: 15px;
+}
+#count{
+    background: none;
+    border: none;
+    font-size: 2.3em;
+    color: deepskyblue;
+    margin-left: 125px;
+}

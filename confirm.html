@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/confirm.css" />
     <meta charset="UTF-8">
     <title>自助违法处理-手机版</title>
 </head>
@@ -12,20 +13,23 @@
     <hr/>
     <div id="info">
         <div>
-            <label style="">驾驶证号码 :</label>
-            <input type="text" id="IDCard" maxlength="18">
+            <label>驾驶证号码 :</label>
+            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" pattern="[0-9]{18}">
+            <img src="images/icon39.png" width="5%" height="5%" id="clear">
         </div>
         <div>
+            <hr width="97%" style="margin-right: 0px"/>
             <label>校验码：</label>
-            <input type="text" id="code" maxlength="6">
+            <input type="text" id="code" maxlength="6" placeholder="输入短信校验码">
+            <button id="count">重新发送</button>
         </div>
     </div>
-    <hr>
+    <hr width="97%" style="margin-right: 0px"/>
     <div>
         <button class="btn btn-primary" id="next">确定，下一步</button>
     </div>
     <div id="warnning">
-        <p>短信校验码已发送至号码150*****547的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50</p>
+        <p>短信校验码已发送至号码150*****547的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50。</p>
     </div>
 </form>
 <div class="tips">
@@ -54,68 +58,4 @@
     </p>
 </div>
 </body>
-<style type="text/css">
-    body {
-        background-color: ghostwhite;
-    }
-
-    #IDNumber {
-        background-color: white;
-        margin-top: 4%;
-    }
-
-    #IDCard {
-        border: none;
-        outline: none;
-        margin-left: 2%;
-        font-size: 2.5em;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        max-lines: 1;
-    }
-
-    #code {
-        border: none;
-        outline: none;
-        font-size: 2.5em;
-        margin-left: 2%;
-        max-lines: 1;
-    }
-
-    #info {
-        position: relative;
-    }
-
-    label {
-        font-size: 2.5em;
-        margin-left: 3%;
-        margin-top: 2%;
-        margin-bottom: 2%;
-    }
-
-    #next {
-        width: 95%;
-        height: 4.5%;
-        position: absolute;
-        text-align: center;
-        font-size: 2.8em;
-        margin-left: 2.5%;
-    }
-
-    #warnning {
-        position: absolute;
-        margin-top: 12%;
-        font-size: 2em;
-        color: gray;
-        padding: 2%;
-    }
-
-    .tips {
-        position: absolute;
-        margin-top: 32%;
-        font-size: 2em;
-        padding: 2%;
-        color: gray;
-    }
-</style>
 </html>
