@@ -47,16 +47,17 @@ label {
 
 #warnning {
     position: absolute;
-    margin-top: 12%;
-    font-size: 1.9em;
+    margin-top: 9%;
+    font-size: 2.3em;
     color: gray;
     padding: 2%;
+    display: none;
 }
 
 .tips {
-    position: absolute;
-    margin-top: 32%;
-    font-size: 2em;
+    position: static;
+    margin-top: 12%;/*如果warnning显示，值为29%，不显示为12%*/
+    font-size: 2.3em;
     padding: 2%;
     color: gray;
 }
@@ -66,6 +67,7 @@ hr{
 #clear{
     margin-left: 155px;
     margin-bottom: 15px;
+    display: none;
 }
 #count{
     background: none;
@@ -73,4 +75,7 @@ hr{
     font-size: 2.3em;
     color: deepskyblue;
     margin-left: 125px;
+}
+.onShow{
+    display: none;
 }

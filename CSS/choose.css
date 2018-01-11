@@ -1,6 +1,7 @@
 body{
     background: url(../images/chooseImgs/zzwfclbg.png);
-    background-repeat: repeat-x;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .study{
     width: 78%;

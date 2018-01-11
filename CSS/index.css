@@ -23,8 +23,9 @@ body {
 
 .textPic {
     width: 78%;
-    position: relative;
-    left: 10px;
+    height: 38%;
+    position: absolute;
+    left: 25px;
     top: 15px;
     animation: downs 0.5s;
 }
