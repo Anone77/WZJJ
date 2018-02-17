@@ -11,10 +11,10 @@
 </head>
 <body>
 <div>
-    <img id="study" onclick="into()" class="study" src="images/chooseImgs/icon37.png"/>
+    <img id="study" onclick="intoStudy()" class="study" src="images/chooseImgs/icon37.png"/>
 </div>
 <div>
-    <img class="enter" src="images/chooseImgs/icon36.png"/>
+    <img onclick="intoConfirm()" class="enter" src="images/chooseImgs/icon36.png"/>
 </div>
 <div id="tips">
     <label>
@@ -25,8 +25,11 @@
 </div>
 </body>
 <script type="text/javascript">
-    function into() {
+    function intoStudy() {
         window.location.href = 'wzjjtk.html'
+    }
+    function  intoConfirm() {
+        window.location.href='confirm.html'
     }
 </script>
 </html>
