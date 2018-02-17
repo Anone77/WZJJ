@@ -12,11 +12,13 @@
 <form id="IDNumber">
     <hr/>
     <div id="info">
+        <!--填写驾驶证-->
         <div>
             <label>驾驶证号码 :</label>
-            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" pattern="[0-9]{18}|[0-9]{17}X$">
-            <img src="images/icon39.png" width="5%" height="5%" id="clear">
+            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" pattern="[0-9]{18}|[0-9]{17}X$" onfocus="showClear()" onkeyup="changeBtn()" value="">
+            <img src="images/icon39.png" width="5%" height="5%" id="clear" onclick="clearAll()">
         </div>
+        <!--填写验证码-->
         <div class="onShow">
             <hr width="97%" style="margin-right: 0px"/>
             <label>校验码：</label>
@@ -25,13 +27,16 @@
         </div>
     </div>
     <hr width="97%" style="margin-right: 0px"/>
+    <!--确定下一步的按钮-->
     <div>
-        <button class="btn btn-primary" id="next">确定，下一步</button>
+        <button class="btn btn-primary" id="next" disabled="disabled">确定，下一步</button>
     </div>
+    <!--发送验证码后的提示信息-->
     <div id="warnning">
         <p>短信校验码已发送至号码150*****547的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50。</p>
     </div>
 </form>
+<!--学习减分的文字说明-->
 <div class="tips">
     <p><b>温馨提示：</b></p>
 
@@ -58,4 +63,23 @@
     </p>
 </div>
 </body>
+<!--触发事件后的方法-->
+<script type="text/javascript">
+    function showClear() {
+        document.getElementById("clear").style.visibility="visible";
+    }
+    function changeBtn() {
+        var next=document.getElementById("next");
+        next.disabled=false;
+        next.style.backgroundColor="#3d2fff"
+        next.style.color="#FFFFFF";
+        next.style.borderColor="#2439ff"
+    }
+    function clearAll() {
+        var ID=document.getElementById("IDCard");
+        ID.value="";
+        ID.focus();
+
+    }
+</script>
 </html>

@@ -43,6 +43,9 @@ label {
     text-align: center;
     font-size: 2.8em;
     margin-left: 2.5%;
+    background-color: whitesmoke;
+    border-color: gray;
+    color: silver;
 }
 
 #warnning {
@@ -65,9 +68,10 @@ hr{
     border: 1px solid gray;
 }
 #clear{
-    margin-left: 155px;
-    margin-bottom: 15px;
-    display: none;
+    position: relative;
+    margin-left: 125px;
+    margin-bottom: 1px;
+    visibility: hidden;
 }
 #count{
     background: none;
