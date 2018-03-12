@@ -83,3 +83,41 @@ hr{
 .onShow{
     display: none;
 }
+
+.dialog{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(158, 158, 158, 0.6);
+    z-index: 999;
+    width:100%;
+    min-height: 100%;
+}
+.dialog .dialog-con{
+    background: #ffffff;
+    position: absolute;
+    height: 20%;
+    width: 85%;
+    opacity: 1;
+    z-index: 9999;
+    text-align: center;
+    left: 7%;
+    top: 20%;
+    border-radius: 15px;
+}
+.dialog .dialog-btn{
+    position: absolute;
+    background: #1aa9ff;
+    width: 90%;
+    height: 90px;
+    line-height: 90px;
+    font-size: 45px;
+    border-radius: 10px;
+    left: 45px;
+    bottom: 25px;
+    color: white;
+}
+.dialog .dialog-con .dialog-content{
+    font-size: 38px;
+    padding: 55px 15px 15px 15px;
+}

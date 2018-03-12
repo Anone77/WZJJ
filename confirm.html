@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/confirm.css" />
     <meta charset="UTF-8">
     <title>自助违法处理-手机版</title>
@@ -15,7 +16,7 @@
         <!--填写驾驶证-->
         <div>
             <label>驾驶证号码 :</label>
-            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" pattern="[0-9]{18}|[0-9]{17}X$" onfocus="showClear()" onkeyup="changeBtn()" value="">
+            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" onfocus="showClear()" onkeyup="changeBtn()" value="">
             <img src="images/icon39.png" width="5%" height="5%" id="clear" onclick="clearAll()">
         </div>
         <!--填写验证码-->
@@ -29,7 +30,7 @@
     <hr width="97%" style="margin-right: 0px"/>
     <!--确定下一步的按钮-->
     <div>
-        <button class="btn btn-primary" id="next" disabled="disabled">确定，下一步</button>
+        <button class="btn btn-primary" id="next" disabled="disabled" onclick="checkCode()">确定，下一步</button>
     </div>
     <!--发送验证码后的提示信息-->
     <div id="warnning">
@@ -62,6 +63,16 @@
 
     </p>
 </div>
+<div class="dialog">
+    <div class="dialog-con">
+        <div class="dialog-content">
+            <span class="dialog-content-info">短信校验码已发送至号码为<span class="tel-hide">15057****32</span>的手机，请注意查收！</span>
+        </div>
+        <div class="dialog-btn">
+            确 定
+        </div>
+    </div>
+</div>
 </body>
 <!--触发事件后的方法-->
 <script type="text/javascript">
@@ -71,15 +82,31 @@
     function changeBtn() {
         var next=document.getElementById("next");
         next.disabled=false;
-        next.style.backgroundColor="#3d2fff"
+        next.style.backgroundColor="#1aa9ff"
         next.style.color="#FFFFFF";
-        next.style.borderColor="#2439ff"
+        next.style.borderColor="#1aa9ff";
+
     }
     function clearAll() {
-        var ID=document.getElementById("IDCard");
-        ID.value="";
-        ID.focus();
-
+        var id=document.getElementById("IDCard");
+        var next=document.getElementById("next");
+        id.value="";
+        id.focus();
+        next.disabled=true;
+        next.style.backgroundColor="#eee"
+        next.style.borderColor="#eee"
+        next.style.color="#bcbcbc";
+    }
+    function checkCode() {
+       /* var id=document.getElementById("IDCard")
+        var reg=/^[0-9]{18}|[0-9]{17}X$/;
+        if(id.test(reg)){
+            alert("进行下一步");
+        }else {
+            alert("输入有误请重新填写");
+            id.value="";
+            id.focus();
+        }*/
     }
 </script>
 </html>
