@@ -43,9 +43,9 @@ label {
     text-align: center;
     font-size: 2.8em;
     margin-left: 2.5%;
-    background-color: whitesmoke;
-    border-color: gray;
-    color: silver;
+    background-color: #eee;
+    border-color: #eee;
+    color: #bcbcbc;
 }
 
 #warnning {
@@ -71,7 +71,7 @@ hr{
     position: relative;
     margin-left: 125px;
     margin-bottom: 1px;
-    visibility: hidden;
+    display: none;
 }
 #count{
     background: none;
@@ -92,6 +92,7 @@ hr{
     z-index: 999;
     width:100%;
     min-height: 100%;
+    display: none;
 }
 .dialog .dialog-con{
     background: #ffffff;

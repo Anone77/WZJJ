@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/confirm.css" />
     <meta charset="UTF-8">
     <title>自助违法处理-手机版</title>
@@ -16,25 +16,25 @@
         <!--填写驾驶证-->
         <div>
             <label>驾驶证号码 :</label>
-            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" onfocus="showClear()" onkeyup="changeBtn()" value="">
-            <img src="images/icon39.png" width="5%" height="5%" id="clear" onclick="clearAll()">
+            <input type="text" id="IDCard" maxlength="18" placeholder="请填写驾驶证号码" value="" autocomplete="off">
+            <img src="images/icon39.png" width="5%" height="5%" id="clear">
         </div>
         <!--填写验证码-->
         <div class="onShow">
             <hr width="97%" style="margin-right: 0px"/>
             <label>校验码：</label>
             <input type="text" id="code" maxlength="6" placeholder="输入短信校验码">
-            <button id="count">重新发送</button>
+            <button id="count">60</button>
         </div>
     </div>
     <hr width="97%" style="margin-right: 0px"/>
     <!--确定下一步的按钮-->
     <div>
-        <button class="btn btn-primary" id="next" disabled="disabled" onclick="checkCode()">确定，下一步</button>
+        <a class="btn btn-primary" id="next">确定，下一步</a>
     </div>
     <!--发送验证码后的提示信息-->
     <div id="warnning">
-        <p>短信校验码已发送至号码150*****547的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50。</p>
+        <p>短信校验码已发送至号码<span class="phone">150*****547</span>的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50。</p>
     </div>
 </form>
 <!--学习减分的文字说明-->
@@ -63,10 +63,10 @@
 
     </p>
 </div>
-<div class="dialog">
+<div class="dialog" >
     <div class="dialog-con">
         <div class="dialog-content">
-            <span class="dialog-content-info">短信校验码已发送至号码为<span class="tel-hide">15057****32</span>的手机，请注意查收！</span>
+            <span class="dialog-content-info">短信校验码已发送至号码为<span class="phone">15057****32</span>的手机，请注意查收！</span>
         </div>
         <div class="dialog-btn">
             确 定
@@ -75,38 +75,50 @@
 </div>
 </body>
 <!--触发事件后的方法-->
-<script type="text/javascript">
-    function showClear() {
-        document.getElementById("clear").style.visibility="visible";
-    }
-    function changeBtn() {
-        var next=document.getElementById("next");
-        next.disabled=false;
-        next.style.backgroundColor="#1aa9ff"
-        next.style.color="#FFFFFF";
-        next.style.borderColor="#1aa9ff";
 
-    }
-    function clearAll() {
-        var id=document.getElementById("IDCard");
-        var next=document.getElementById("next");
-        id.value="";
-        id.focus();
-        next.disabled=true;
-        next.style.backgroundColor="#eee"
-        next.style.borderColor="#eee"
-        next.style.color="#bcbcbc";
-    }
-    function checkCode() {
-       /* var id=document.getElementById("IDCard")
-        var reg=/^[0-9]{18}|[0-9]{17}X$/;
-        if(id.test(reg)){
-            alert("进行下一步");
+<script>
+    $("#IDCard").focus(function () {
+        $("#clear").show();
+        $("#next").css({"background":"#1aa9ff","color":"#FFF","borderColor":"#1aa9ff"});
+        $("#next").attr("disable","false");
+    });
+    $("#clear").click(function () {
+        $("#IDCard").val("").focus();
+        $("#next").css({"background":"#eee","color":"#bcbcbc","borderColor":"#eee"});
+        $("#next").attr("disable","true");
+    });
+    $("#next").click(function () {
+        var reg=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        var id=$.trim($("#IDCard").val());
+        if(reg.test(id)){
+            $("#warnning").show();
+            $(".tips").css("margin-top","29%");
+            $("#clear").hide();
+            timeCount();
+            $(".onShow").show();
+            $(".dialog").show();
         }else {
             alert("输入有误请重新填写");
             id.value="";
             id.focus();
-        }*/
+        }
+    });
+    $(".dialog-btn").click(function () {
+        $(".dialog").hide();
+    });
+    function timeCount() {
+        var count=60;
+        var timer;
+        timer=setInterval(function () {
+            count--;
+            if (count>0){
+                $("#count").html(count);
+            }
+            else {
+                clearInterval(timer);
+                $("#count").html("获取验证码")
+            }
+        },1000);
     }
 </script>
 </html>
