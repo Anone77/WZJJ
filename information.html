@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="info">
-        <div class="info-tips">
+        <div class="info-tips" >
             <span>您本积分周期通过学习测试已经获得<span>X</span>分减分券，还可以再通过学习获得<span>X</span>分减分券。如果进行学习减分，请点击"进入学习减分平台"；如果处理非现场违法，请点击"进入个人处理"。</span>
         </div>
         <div class="enter-learn">
@@ -18,10 +18,10 @@
         <div class="info-ticket">
             <div class="info-ticket-items">
                 <div class="ticket-item">
+                    <div class="ticket-title">券1</div>
+                    <div class="ticket-con">
 
-                </div>
-                <div class="ticket-item">
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,7 +35,6 @@
         position: relative;
     }
     .info .info-tips{
-        position: absolute;
         width: 100%;
         height: 75px;
         line-height: 75px;
@@ -53,6 +52,7 @@
         text-align: center;
         font-size: 45px;
         left: 50px;
+        top: 0px;
         border-radius: 10px;
     }
     .btn-learn{
@@ -60,6 +60,18 @@
     }
     .btn-person{
         top: 440px;
+    }
+    .info-ticket{
+        background: white;
+        margin-top: 550px;
+        padding: 0px 30px;
+    }
+    .info-ticket .info-ticket-items .ticket-item{
+        font-size: 38px;
+        color: #888888;
+    }
+    .info-ticket .info-ticket-items .ticket-item div{
+        border-bottom: 1px solid #888888;
     }
 </style>
 </html>
