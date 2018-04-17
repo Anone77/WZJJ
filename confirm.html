@@ -31,10 +31,11 @@
     <!--确定下一步的按钮-->
     <div>
         <a class="btn btn-primary" id="next">确定，下一步</a>
+        <a class="btn btn-primary" id="check" style="display: none">验&nbsp;&nbsp;&nbsp;&nbsp;证</a>
     </div>
     <!--发送验证码后的提示信息-->
     <div id="warnning">
-        <p>短信校验码已发送至号码<span class="phone">150*****547</span>的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50。</p>
+        <p>短信校验码已发送至号码<span class="phone" id="phone">150*****547</span>的手机，请注意查收！如您确认上述手机号码真实有效，仍长时间未收到短信验证码，请拨打电话0577-88300114，时间：每天8:30--17:50。</p>
     </div>
 </form>
 <!--学习减分的文字说明-->
@@ -90,21 +91,27 @@
     $("#next").click(function () {
         var reg=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
         var id=$.trim($("#IDCard").val());
+        // 发送请求，获取对应的手机号码，并发送短信验证
         if(reg.test(id)){
-            $("#warnning").show();
+            $("#warnning").show(); // 在主页面显示提示语
             $(".tips").css("margin-top","29%");
-            $("#clear").hide();
-            timeCount();
-            $(".onShow").show();
-            $(".dialog").show();
+            $("#clear").hide(); // 隐藏清除按钮
+            timeCount(); // 开始60秒倒计时
+            $(".onShow").show(); // 显示填写验证码的代码块
+            $(".dialog").show(); //  显示对话框
+            $('#next').hide();
+            $('#check').show();
         }else {
             alert("输入有误请重新填写");
             id.value="";
-            id.focus();
+            $("#IDCard").focus();
         }
     });
     $(".dialog-btn").click(function () {
-        $(".dialog").hide();
+        $(".dialog").hide();// 点击对话框的确定按钮后，隐藏对话框
+    });
+    $('#check').click(function () {
+        window.location.href = './information.html';
     });
     function timeCount() {
         var count=60;
