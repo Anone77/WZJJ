@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="jquery-3.3.1.js"></script>
     <meta charset="UTF-8">
     <title>学习减分平台</title>
 </head>
@@ -8,65 +9,105 @@
 <div class="exam">
     <div class="tips">
         <div class="score">
-            <p>您的成绩：<span>80</span> 分，</p>
+            <p>您的成绩：<span class="numScore">80</span> 分，</p>
             <p class="fail-tip" style="display: none">您未通过本次考试。如果要继续考试，请点击“重新出题”；如果处理非现场违法，请点击“进入处理”。</p>
-            <p class="success-tip">恭喜您通过本兮考试，获得1分的减分券2张。您在本周期内已参加2此学习减分，共获得减分券4张，共计4分。如果处理非现场违法，请点击“进入个人处理”。</p>
+            <p class="success-tip">恭喜您通过本兮考试，获得1分的减分券<span>2</span>张。您在本周期内已参加<span>2</span>次学习减分，共获得减分券<span>4</span>张，共计<span>4</span>分。如果处理非现场违法，请点击“进入个人处理”。
+            </p>
         </div>
-        <div class="enter-learn">
-            <a class="btn btn-learn">进入学习减分平台</a>
+        <div class="enter-learn again">
+            <a class="btn btn-again-top">重新出题</a>
         </div>
         <div class="enter-person">
             <a class="btn btn-person">进入个人处理</a>
         </div>
     </div>
-
 </div>
-
+<div class="exam-warp">
+    <div class="exam-items">
+        <div class="exam-item">
+            <div class="exam-question">
+                <span>i.</span><span>到期不缴纳罚款，每日按罚款数额的百分之____加处罚款。</span>
+            </div>
+            <div class="exam-options">
+                <div class="exam-option">
+                    <span>A.</span><span>三</span>
+                </div>
+                <div class="exam-option">
+                    <span>B.</span><span>五</span>
+                </div>
+            </div>
+            <div class="user-options">
+                <form>
+                    <input type="radio" name="option"><span>A</span>
+                    <input type="radio" name="option" class="optionB"><span>B</span>
+                </form>
+                <div class="user-answer" style="display: none">
+                    <span>您的答案：</span><span>A</span>
+                    <span style="margin-left: 46px">正确答案：</span><span>A</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="exam-footer">
+    <div class="enter-learn">
+        <a class="btn btn-submit-bottom">交卷 (<span id="minute">29</span>分<span id="second">59</span>秒)</a>
+    </div>
+    <div class="enter-learn again">
+        <a class="btn btn-again-bottom">重新出题</a>
+    </div>
+</div>
+<div class="dialog">
+    <div class="dialog-con">
+        <div class="dialog-content">
+            <span class="dialog-content-info"></span>
+        </div>
+        <div class="dialog-btn">
+            确 定
+        </div>
+    </div>
+</div>
 </body>
+<script type="text/javascript">
+    var minute = 29;
+    var second = 59;
+    setInterval(function () {
+        second--;
+        if (second == 00 && minute == 00) {
+            minute = 29;
+            second = 59;
+        }
+        //当分钟和秒钟都为00时，重新给值
+        if (second == 00) {
+            second = 59;
+            minute--;
+            if (minute < 10) minute = "0" + minute;
+        }
+        //当秒钟为00时，秒数重新给值
+        if (second < 10) second = "0" + second;
+        $("#minute").text(minute);
+        $("#second").text(second);
+    }, 1000);
+    $(".dialog-btn").click(function () {
+        // 点击确定按钮后重新出题
+        $(".dialog").hide();// 点击对话框的确定按钮后，隐藏对话框
+    });
+    $(".again").click(function () {
+        $(".dialog-content-info").html('是否重新出题');
+        $(".dialog").show();
+    })
+
+    function getTest() {
+        // 获得10道考试题目，获得数据之后，使用for循环将数据依次展现在页面上
+    }
+
+    function commitTest() {
+        // 思路：设置两个全局变量，一个存放正确的答案，一个根据下标存放用户选择的答案
+        // 交卷时将两个数组拿出来比对，对上的个数*10 及时用户的考试得分
+        // 低于90的都为不合格，不向后台获取用户所拥有的考试信息
+    }
+</script>
 <style>
-    body {
-        background: ghostwhite;
-    }
-    .exam{
-        padding: 16px;
-    }
-    .exam .tips {
-        width: 100%;
-        height: 75px;
-    }
-    .tips .score{
-        position: relative;
-    }
-    .tips .score span{
-        font-weight: 900;
-    }
-    .score p {
-        display: inline;
-        font-size: 2em;
-        color: #ec2d15;
-    }
-
-    .btn {
-        display: block;
-        background: #1aa9ff;
-        color: #ffffff;
-        width: 90%;
-        height: 100px;
-        line-height: 100px;
-        text-align: center;
-        font-size: 45px;
-        left: 50px;
-        top: 0px;
-        border-radius: 10px;
-        margin: 35px auto;
-    }
-
-    .btn-learn {
-        top: 300px;
-    }
-
-    .btn-person {
-        top: 440px;
-    }
+    @import "CSS/exam.css";
 </style>
 </html>

@@ -1,0 +1,126 @@
+body {
+    background: ghostwhite;
+}
+
+.exam {
+    padding: 16px;
+}
+
+.exam .tips {
+    width: 100%;
+}
+
+.tips .score {
+    position: relative;
+    padding-left: 8px;
+}
+
+.tips .score span {
+    font-weight: 900;
+    display: inline-block;
+}
+
+.tips .score p {
+    display: inline;
+    font-size: 2.4em;
+    color: #ec2d15;
+}
+
+.tips .score .numScore {
+    font-size: 1em;
+    color: #ec2d15;
+}
+
+.btn {
+    display: block;
+    background: #1aa9ff;
+    color: #ffffff;
+    width: 90%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 3em;
+    left: 50px;
+    top: 0px;
+    border-radius: 10px;
+    margin: 35px auto;
+}
+
+.exam-warp {
+    margin-top: 40px;
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+    box-sizing: border-box;
+}
+
+.exam-warp .exam-items .exam-item {
+    background-color: #fefefe;
+    width: 100%;
+    border-top: 1px solid #888888;
+    display: inline-block;
+}
+
+.exam-item {
+    font-size: 2.4em;
+    margin-bottom: 35px;
+}
+
+.exam-warp .exam-item .exam-question,
+.exam-warp .exam-item .exam-options .exam-option,
+.exam-warp .exam-item .user-options {
+    border-bottom: 1px solid #888888;
+    padding: 10px 0;
+    padding-left: 26px;
+}
+
+.exam-warp .exam-item .user-options input[type=radio] {
+    width: 30px;
+    height: 30px;
+}
+.exam-warp .exam-item .user-options .optionB{
+    margin-left: 100px;
+}
+
+.exam-warp .exam-item .user-options span{
+    margin-left: 20px
+}
+
+
+.dialog{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(158, 158, 158, 0.6);
+    z-index: 999;
+    width:100%;
+    min-height: 100%;
+    display: none;
+}
+.dialog .dialog-con{
+    background: #ffffff;
+    position: absolute;
+    height: 20%;
+    width: 85%;
+    opacity: 1;
+    z-index: 9999;
+    text-align: center;
+    left: 7%;
+    top: 20%;
+    border-radius: 15px;
+}
+.dialog .dialog-btn{
+    position: absolute;
+    background: #1aa9ff;
+    width: 90%;
+    height: 90px;
+    line-height: 90px;
+    font-size: 45px;
+    border-radius: 10px;
+    left: 45px;
+    bottom: 25px;
+    color: white;
+}
+.dialog .dialog-con .dialog-content{
+    font-size: 38px;
+    padding: 55px 15px 15px 15px;
+}
